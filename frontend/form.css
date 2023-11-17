@@ -1,0 +1,14 @@
+#manc{
+    width: 50%;
+}
+#manc label{
+   text-align: left;
+    padding: 10px;
+   display: block;
+  
+   width: fit-content;
+}
+#manc input{
+    margin: 0;
+    width: fit-content;
+}

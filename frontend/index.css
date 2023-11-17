@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aqua;
+  padding: 20px;
+}
+#opt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
+}
+#opt h3 {
+    margin: 0 20px;
+    text-decoration: none;
+}
+ a{
+    text-decoration: none;
+    color: black;
+}
+#manc{
+    margin: 50px auto;
+    width:50%;
+    
+    text-align: center;
+    background-color: aqua;
+    padding: 20px  0;
+}
