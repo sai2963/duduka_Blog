@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../data/database');
+const db = require('./data/database');
 const router = express.Router();
 
 router.get('/', function (req, res) {
@@ -12,10 +12,10 @@ router.get('/index', function (req, res) {
 
 router.get('/form', async function (req, res) {
     try {
-        const authors = await db.query('SELECT * FROM authors');
+        const [authors] = await db.query('SELECT * FROM authors');
         res.render('form', { authors:authors });
     } catch (error) {
-        console.error('Error fetching authors:', error);
+        console.error('Error fetching a uthors:', error);
         res.status(500).send('Internal Server Error');
     }
 });
