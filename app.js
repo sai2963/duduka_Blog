@@ -2,7 +2,7 @@
 const path = require('path');
 const express = require('express');
 const blogroutes = require('./routes/blog');
-const db = require('./data/database');
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'frontend'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('frontend'));
 app.use(blogroutes);
-app.use(db);
+
 // Add a route for /index
 
 

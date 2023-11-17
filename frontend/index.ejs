@@ -1,3 +1,4 @@
+<!-- index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +20,21 @@
     <main>
         <div id="manc">
             <h2>My Blogs</h2>
-            <div >
-                <h3 ></h3>
-                <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"></p>
-                <p></p>
-                <a href="">Delete Post</a>
-                <a href="">Edit Post</a>
-                <a href="">View Post</a>
-            </div>
-           
+            <% if (index && index.length > 0) { %>
+                <% for (const post of index) { %>
+                    <div id="mancd">
+                        <h3><%= post.TITLE %></h3>
+                        <p><%= post.SUMMARY %></p>
+                        <p><%= post.BODY %></p>
+                        <p>Author: <%= post.author_name %></p>
+                        <a href="">Delete Post</a>
+                        <a href="">Edit Post</a>
+                        <a href="">View Post</a>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <p>No posts available</p>
+            <% } %>
         </div>
     </main>
 </body>
