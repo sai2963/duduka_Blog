@@ -1,4 +1,5 @@
 // blog.js
+
 const express = require('express');
 const db = require('../data/database');
 const router = express.Router();
@@ -43,6 +44,29 @@ router.post('/form', async function (req, res) {
         console.error('Error submitting form:', error);
         // Send a more informative error message to the client
         res.status(500).send(`Internal Server Error: ${error.message}`);
+    }
+});
+
+router.get('/post/:postId', async function (req, res) {
+    try {
+        const postId = req.params.postId;
+        const query = `
+            SELECT post.*, authors.NAME AS author_name 
+            FROM post 
+            INNER JOIN authors ON post.AUTHOR_ID = authors.ID 
+            WHERE post.ID = ?
+        `;
+        const [post] = await db.query(query, [postId]);
+
+        if (!post) {
+            res.status(404).send('Post not found');
+            return;
+        }
+
+        res.render('post', { post: post });
+    } catch (error) {
+        console.error('Error fetching post:', error);
+        res.status(500).send('Internal Server Error');
     }
 });
 

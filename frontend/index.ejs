@@ -1,11 +1,12 @@
 <!-- index.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/path-to-your-css-file/index.css">
 </head>
 <body>
     <header>
@@ -29,7 +30,7 @@
                         <p>Author: <%= post.author_name %></p>
                         <a href="">DeletePost</a>
                         <a href="">EditPost</a>
-                        <a href="/index/<%=post.id %>">ViewPost</a>
+                        <a href="/post/<%= post.ID %>">View Post</a>
                     </div>
                 <% } %>
             <% } else { %>

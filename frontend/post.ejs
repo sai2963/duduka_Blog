@@ -1,0 +1,30 @@
+<!-- post.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.TITLE %></title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="/index"><h1>My Blog</h1></a>
+        </div>
+        <div id="opt">
+            <a href="/index"><h3>All Posts</h3></a>
+            <a href="/form"><h3>Create Post</h3></a>
+        </div>
+    </header>
+    <main>
+        <div id="manc">
+            <h2><%= post.TITLE %></h2>
+            <p><%= post.SUMMARY %></p>
+            <p><%= post.BODY %></p>
+            <p>Author: <%= post.author_name %></p>
+        </div>
+    </main>
+</body>
+</html>
